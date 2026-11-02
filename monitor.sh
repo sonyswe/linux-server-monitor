@@ -1,4 +1,3 @@
-i
 #!/bin/bash
 
 set -o pipefail
@@ -270,6 +269,9 @@ check_disk
 check_processes
 check_uptime
 check_services
+
+# Save historical metrics for the dashboard
+bash "$SCRIPT_DIR/metrics.sh"
 
 send_alerts
 
